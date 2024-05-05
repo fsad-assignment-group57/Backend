@@ -11,7 +11,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name="tbl_language_structure")
+@Table(name="tbl_youtube_link")
 public class UserLanguageYoutubeLinkModel {
 	
 	@Id

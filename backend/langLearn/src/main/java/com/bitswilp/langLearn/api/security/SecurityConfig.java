@@ -26,7 +26,8 @@ public class SecurityConfig{
             "/v3/api-docs.yaml",
             "/v3/api-docs/**",
             "/swagger-ui/**",
-            "/swagger-ui/index.html"
+            "/swagger-ui/index.html",
+            "/api/v1/**"
     };
 
     private JwtAuthEntryPoint jwtAuthEntryPoint;
