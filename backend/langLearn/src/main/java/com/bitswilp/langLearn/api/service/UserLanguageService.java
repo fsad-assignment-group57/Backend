@@ -30,6 +30,7 @@ public interface UserLanguageService {
 	List<UserLevelModel> postUserLevelDetails(String username,String level, String language);
 	
 	List<UserLevel> getAllPoints();
+	Long getLevelFromUser(String userId,String language);
 	
 
 }

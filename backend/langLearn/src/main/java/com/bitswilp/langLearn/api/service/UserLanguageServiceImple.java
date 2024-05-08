@@ -1,9 +1,11 @@
 package com.bitswilp.langLearn.api.service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -177,6 +179,20 @@ public class UserLanguageServiceImple implements UserLanguageService {
 			
 		
 		return userLevel;
+	}
+	
+	@Override
+	public Long getLevelFromUser(String userId,String language) {
+
+		 List<UserLevelModel> levels = userLevelModelRepo.findByUserIdOrderByLevelDesc(userId,language);
+		 
+		 if (levels.isEmpty()) {
+	            return 1l; // or throw an exception if needed
+	        }
+
+	        return Long.parseLong(levels.get(0).getUserLevelKey().getLevel());
+
+
 	}
 	
 	

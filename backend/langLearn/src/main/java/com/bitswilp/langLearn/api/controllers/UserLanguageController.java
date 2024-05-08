@@ -115,11 +115,18 @@ public class UserLanguageController {
 
 	@Operation(summary = "Get Call to fetch  points", description = "for all users")
 
-	@GetMapping("/getUserLevels")
+	@GetMapping("/getUserPoints")
 	public ResponseEntity<List<UserLevel>> getAllPoints() {
 		List<UserLevel>  sentence_link = userLangSer.getAllPoints();
 		return ResponseEntity.ok(sentence_link);
 	}
-	
+
+	@Operation(summary = "Get Call to fetch  level", description = "for a users and language")
+
+	@GetMapping("/getUserLevel/{userId}/{language}")
+	public ResponseEntity<Long> getUserLevel(@PathVariable String userId,@PathVariable String language) {
+		Long level = userLangSer.getLevelFromUser(userId,language);
+		return ResponseEntity.ok(level);
+	}
 
 }
