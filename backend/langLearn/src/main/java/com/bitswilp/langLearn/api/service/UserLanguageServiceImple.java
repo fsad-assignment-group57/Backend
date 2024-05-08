@@ -1,21 +1,28 @@
 package com.bitswilp.langLearn.api.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitswilp.langLearn.api.dto.UserLevel;
 import com.bitswilp.langLearn.api.models.UserLanguageModel;
 import com.bitswilp.langLearn.api.models.UserLanguageQuizModel;
 import com.bitswilp.langLearn.api.models.UserLanguageSentenceModel;
 import com.bitswilp.langLearn.api.models.UserLanguageStructureModel;
 import com.bitswilp.langLearn.api.models.UserLanguageYoutubeLinkModel;
+import com.bitswilp.langLearn.api.models.UserLevelKey;
+import com.bitswilp.langLearn.api.models.UserLevelModel;
 import com.bitswilp.langLearn.api.repository.UserLanguageQuizRepository;
 import com.bitswilp.langLearn.api.repository.UserLanguageRepository;
 import com.bitswilp.langLearn.api.repository.UserLanguageSentenceRepo;
 import com.bitswilp.langLearn.api.repository.UserLanguageStructureRepo;
 import com.bitswilp.langLearn.api.repository.UserLanguageYoutubeLinkModelRepo;
+import com.bitswilp.langLearn.api.repository.UserLevelModelRepo;
 
 @Service
 public class UserLanguageServiceImple implements UserLanguageService {
@@ -34,6 +41,9 @@ public class UserLanguageServiceImple implements UserLanguageService {
 	
 	@Autowired
 	private UserLanguageSentenceRepo langsetnenceRepo;
+	
+	@Autowired
+	private UserLevelModelRepo userLevelModelRepo;
 
 	@Override
 	public List<UserLanguageModel> getAllLanguages() {
@@ -124,6 +134,52 @@ public class UserLanguageServiceImple implements UserLanguageService {
 	public List<UserLanguageSentenceModel> findSentenceByLevelAndLanguages(String level, String language){
 		return langsetnenceRepo.findByLevelAndLanguage(level,language);
 	}
+
+	@Override
+	public List<UserLevelModel> postUserLevelDetails(String username, String level, String language) {
+		
+		UserLevelKey userLevelKey = new UserLevelKey();
+		userLevelKey.setLangauge(language);
+		userLevelKey.setLevel(level);
+		userLevelKey.setUserId(username);
+		
+		UserLevelModel userLevelModel = new UserLevelModel();
+		userLevelModel.setUserLevelKey(userLevelKey);
+				
+		int points = Integer.parseInt(level)*5;
+		
+		userLevelModel.setPoints(points);
+		
+		userLevelModelRepo.save(userLevelModel);
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserLevel> getAllPoints() {
+		// TODO Auto-generated method stub
+		List<UserLevelModel> userLevelModel = userLevelModelRepo.findAll();
+		
+		Map<String,Long> userPoints = new HashMap<>();
+		for(UserLevelModel userIterator : userLevelModel) {
+			String userId = userIterator.getUserLevelKey().getUserId();
+			userPoints.put(userId, userPoints.getOrDefault(userId, (long) 0) + userIterator.getPoints());
+		}
+		
+		List<UserLevel> userLevel = new  ArrayList<>();
+		
+		for(Map.Entry<String,Long> entry : userPoints.entrySet()) {
+			UserLevel userLevelPoints = new UserLevel();
+			userLevelPoints.setUserId(entry.getKey());
+			userLevelPoints.setPoints(entry.getValue());
+			userLevel.add(userLevelPoints);
+		}
+			
+		
+		return userLevel;
+	}
+	
+	
 
 	
 	

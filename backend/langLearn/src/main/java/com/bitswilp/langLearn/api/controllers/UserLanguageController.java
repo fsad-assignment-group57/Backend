@@ -4,11 +4,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bitswilp.langLearn.api.dto.UserLevel;
 import com.bitswilp.langLearn.api.models.UserLanguageModel;
 import com.bitswilp.langLearn.api.models.UserLanguageQuizModel;
 import com.bitswilp.langLearn.api.models.UserLanguageSentenceModel;
 import com.bitswilp.langLearn.api.models.UserLanguageStructureModel;
 import com.bitswilp.langLearn.api.models.UserLanguageYoutubeLinkModel;
+import com.bitswilp.langLearn.api.models.UserLevelModel;
 import com.bitswilp.langLearn.api.repository.UserLanguageRepository;
 import com.bitswilp.langLearn.api.service.UserLanguageService;
 
@@ -17,12 +19,14 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 
@@ -90,14 +94,30 @@ public class UserLanguageController {
 	}
 	 
 	 
-		
-	 @Operation( summary = "GET Operation on youtube links of languages",
-	 description = "to fetch youtube link details of languages from database" )
-	
+	 @Operation(summary = "Get Operation to getch content for sentence formation", description = "based on user language and his current level")
 	 
 	@GetMapping("/sentence/{level}/{language}")
 	public ResponseEntity<List<UserLanguageSentenceModel>> getAllSetence(@PathVariable String level,@PathVariable String language){
 		List<UserLanguageSentenceModel> sentence_link = userLangSer.findSentenceByLevelAndLanguages( level, language);
+		return ResponseEntity.ok(sentence_link);
+	}
+	 
+	@Operation(summary = "Post Operation on User enrolled details", description = "to update user enrolled language and his current level")
+
+	@PostMapping("/userlevel/{username}/{level}/{language}")
+	public ResponseEntity<List<UserLevelModel>> userLevel(@PathVariable String username,@PathVariable String level,
+			@PathVariable String language) {
+		List<UserLevelModel> sentence_link = userLangSer.postUserLevelDetails(username,level, language);
+		return ResponseEntity.ok(sentence_link);
+	}
+	
+	
+
+	@Operation(summary = "Get Call to fetch  points", description = "for all users")
+
+	@GetMapping("/getUserLevels")
+	public ResponseEntity<List<UserLevel>> getAllPoints() {
+		List<UserLevel>  sentence_link = userLangSer.getAllPoints();
 		return ResponseEntity.ok(sentence_link);
 	}
 	

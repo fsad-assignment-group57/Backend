@@ -288,5 +288,8 @@ insert into fsad.`quiz_options` (id,options)  values (29,'Novata');
 
 select * from fsad.quiz_options;
 
+***********************
 
+INSERT INTO `fsad`.`roles` (`id`, `name`) VALUES ('1', 'User');
+INSERT INTO `fsad`.`roles` (`id`, `name`) VALUES ('2', 'admin');
 
