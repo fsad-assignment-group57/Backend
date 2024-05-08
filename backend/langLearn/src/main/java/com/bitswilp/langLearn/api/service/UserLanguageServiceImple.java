@@ -187,7 +187,7 @@ public class UserLanguageServiceImple implements UserLanguageService {
 		 List<UserLevelModel> levels = userLevelModelRepo.findByUserIdOrderByLevelDesc(userId,language);
 		 
 		 if (levels.isEmpty()) {
-	            return 1l; // or throw an exception if needed
+	            return 0l; // or throw an exception if needed
 	        }
 
 	        return Long.parseLong(levels.get(0).getUserLevelKey().getLevel());
