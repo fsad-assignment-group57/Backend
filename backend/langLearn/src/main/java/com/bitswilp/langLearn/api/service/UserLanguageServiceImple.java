@@ -49,13 +49,14 @@ public class UserLanguageServiceImple implements UserLanguageService {
 
 	@Override
 	public List<UserLanguageModel> getAllLanguages() {
-		List<UserLanguageModel> langs = userLangRepo.findAll();
-		return langs.stream().map((lan) -> mapToLang(lan)).collect(Collectors.toList());
+		List<UserLanguageModel> langgs = userLangRepo.findAll(); 
+		return langgs.stream().map(this::mapToLang).collect(Collectors.toList());
 	}
 
 	private UserLanguageModel mapToLang(UserLanguageModel langMod) {
 		UserLanguageModel langsMod = new UserLanguageModel();
 		langsMod.setLanguages(langMod.getLanguages());
+		langsMod.setNativeLanguage(langMod.getNativeLanguage());
 		return langsMod;
 
 	}

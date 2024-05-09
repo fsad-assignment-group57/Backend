@@ -7,10 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @AllArgsConstructor
@@ -26,20 +23,26 @@ public class UserLanguageModel {
 	
 	@Column(name = "languages")
 	private String languages;
-
+	
+	@Column(name = "native_language")
+	private String nativeLanguage;
 
 	public String getLanguages() {
 		return languages;
 	}
 
-
 	public void setLanguages(String languages) {
 		this.languages = languages;
 	}
 
+	public String getNativeLanguage() {
+		return nativeLanguage;
+	}
 
-	
-	
+	public void setNativeLanguage(String nativeLanguage) {
+		this.nativeLanguage = nativeLanguage;
+	}
+
 	
 
 }

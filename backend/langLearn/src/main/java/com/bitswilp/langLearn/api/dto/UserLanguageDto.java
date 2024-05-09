@@ -6,5 +6,6 @@ import lombok.Data;
 public class UserLanguageDto {
 	
 	private String languages;
+	private String nativeLanguage;
 
 }
