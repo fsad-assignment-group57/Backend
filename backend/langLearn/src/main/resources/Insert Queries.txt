@@ -13,7 +13,7 @@ insert into fsad.tbl_language_structure (id,English_word,language,Language_word,
 
 select * from  fsad.tbl_language_structure ;
 
-********************************************************************************
+###########################
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values(1,'Learn Hindi in 30 Minutes - ALL the Basics You Need','Hindi',1,'1lrz11BbqCA');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values (2,'Learn Hindi Varnamala','Hindi',1,'Yvb3we9HMFo');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (3,'Learn Hindi swar varnmala','Hindi',1,'8UWtPMwNTzs');
@@ -28,7 +28,7 @@ insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_wo
 
 select * from  fsad.tbl_youtube_link ;
 
-**************************************************
+###########################
 
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (1,'Weather is good','hindi','मौसम अच्छा है',1);
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (2,'Its raining outside','hindi','बाहर बारिश हो रही हे',1);
@@ -43,7 +43,7 @@ insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_wor
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (9,'Food is delicious','spanish','La comida es deliciosa',1);
 
 select * from fsad.`tbl_sentence_formation`;
-**************************************************
+###########################
 
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (1,'नमस्ते','hindi',1,'What is Hello in Hindi?');
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (2,'मौसम अच्छा है','hindi',1,'Weather is good in Hindi?');
@@ -58,7 +58,7 @@ insert into fsad.`language_quiz_question` (id,answer,language,level,question)  v
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (9,'Buenas noches','spanish',1,'What is Good Night in spanish?');
 
 select * from fsad.`language_quiz_question`;
-**************************************************
+###########################
 
 insert into fsad.`quiz_options` (id,options)  values (1,'नमस्ते');
 insert into fsad.`quiz_options` (id,options)  values (1,'शुभ रात्रि');
@@ -107,9 +107,9 @@ insert into fsad.tbl_language_structure (id,English_word,language,Language_word,
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (17,'Above','French','Au-dessus de',2,'Au-dessus de');
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (18,'Round','French','Ronde',2,'Ronde');
 
-select * from  fsad.tbl_language_structure ;
+#select * from  fsad.tbl_language_structure ;
 
-********************************************************************************
+###########################
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values(10,'Learn Hindi Through English - Lesson 4','Hindi',2,'tv43okv6v1Y');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values (11,'Learn Hindi Through English - Lesson 5','Hindi',2,'ITbbpElhGbM');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (12,'Learn Hindi Through English - Lesson 6','Hindi',2,'W1FKsIMipdw');
@@ -122,8 +122,8 @@ insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_wo
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (17,'Quickly Master Colors in Spanish | The Language Tutor','Spanish',2,'K6NSvBvQYBY');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (18,'Learn Spanish: Days of the Week Made Easy!','Spanish',2,'wwZgwnTIb58');
 
-select * from  fsad.tbl_youtube_link ;
-**************************************************
+#select * from  fsad.tbl_youtube_link ;
+###########################
 
 
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (10,'I live in mumbai','hindi','मेँ मुंबई मेँ रहता हूँ',2);
@@ -138,9 +138,9 @@ insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_wor
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (17,'They played very well','spanish','Ellas jugaron muy bien',2);
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (18,'We should help the poor','spanish','Deberíamos ayudar a los pobres',2);
 
-select * from fsad.`tbl_sentence_formation`;
+#select * from fsad.`tbl_sentence_formation`;
 
-**************************************************
+###########################
 
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (10,'बाद','hindi',2,'What is After in Hindi?');
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (11,'मेँ मुंबई मेँ रहता हूँ','hindi',2,'I live in mumbai in Hindi?');
@@ -154,8 +154,8 @@ insert into fsad.`language_quiz_question` (id,answer,language,level,question)  v
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (17,'vivo en mumbai','spanish',2,'I live in mumbai in spanish?');
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (18,'Redonda','spanish',2,'Round in spanish?');
 
-select * from fsad.`language_quiz_question`;
-**************************************************
+#select * from fsad.`language_quiz_question`;
+###########################
 
 insert into fsad.`quiz_options` (id,options)  values (10,'बाद');
 insert into fsad.`quiz_options` (id,options)  values (10,'ऊपर');
@@ -188,7 +188,7 @@ insert into fsad.`quiz_options` (id,options)  values (18,'Después');
 insert into fsad.`quiz_options` (id,options)  values (18,'Arriba');
 insert into fsad.`quiz_options` (id,options)  values (18,'Redonda');
 
-select * from fsad.quiz_options;
+#select * from fsad.quiz_options;
 
 #######################################################Level 3:
 
@@ -205,9 +205,9 @@ insert into fsad.tbl_language_structure (id,English_word,language,Language_word,
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (28,'Genuine','French','Authentique',3,'Authentique');
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (29,'Novice','French','Novice',3,'Novice');
 
-select * from  fsad.tbl_language_structure ;
+#select * from  fsad.tbl_language_structure ;
 
-********************************************************************************
+###########################
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values(19,'Learn Hindi Through English - Lesson 7','Hindi',3,'l6tZrRx1V8Q');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word) values (20,'Learn Hindi Through English - Lesson 8','Hindi',3,'BzLob23wqv8');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (21,'Learn Hindi Through English - Lesson 9','Hindi',3,'kp98sX96zDU');
@@ -220,8 +220,8 @@ insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_wo
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (28,'How to Write Dates in Spanish | The Language Tutor *Lesson 6*','Spanish',3,'fVNMU4xj9Nk');
 insert into fsad.tbl_youtube_link (id,description,language,level,link_youtube_word)  values (29,'How to Greet in Spanish for Beginners','Spanish',3,'AqfQQZVmTUw');
 
-select * from  fsad.tbl_youtube_link ;
-**************************************************
+#select * from  fsad.tbl_youtube_link ;
+###########################
 
 
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (19,'The clock is very old','hindi','घड़ी बहुत पुरानी है',3);
@@ -236,9 +236,9 @@ insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_wor
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (28,'You are honest','spanish','Eres honesta',3);
 insert into fsad.`tbl_sentence_formation` (id,english_word,language,language_word,level)  values (29,'I am in a hurry','spanish','Tengo prisa',3);
 
-select * from fsad.`tbl_sentence_formation`;
+#select * from fsad.`tbl_sentence_formation`;
 
-**************************************************
+###########################
 
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (19,'आगबबूला','hindi',3,'What is Furious in Hindi?');
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (20,'घड़ी बहुत पुरानी है','hindi',3,'The clock is very old in Hindi?');
@@ -252,8 +252,8 @@ insert into fsad.`language_quiz_question` (id,answer,language,level,question)  v
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (28,'el reloj es muy viejo','spanish',3,'The clock is very old in spanish?');
 insert into fsad.`language_quiz_question` (id,answer,language,level,question)  values (29,'Novata','spanish',3,'Novice in spanish?');
 
-select * from fsad.`language_quiz_question`;
-**************************************************
+#select * from fsad.`language_quiz_question`;
+###########################
 
 insert into fsad.`quiz_options` (id,options)  values (19,'आगबबूला');
 insert into fsad.`quiz_options` (id,options)  values (19,'असली');
@@ -286,10 +286,17 @@ insert into fsad.`quiz_options` (id,options)  values (29,'Furiosa');
 insert into fsad.`quiz_options` (id,options)  values (29,'Genuina');
 insert into fsad.`quiz_options` (id,options)  values (29,'Novata');
 
-select * from fsad.quiz_options;
+#select * from fsad.quiz_options;
 
-***********************
+###########################
 
 INSERT INTO `fsad`.`roles` (`id`, `name`) VALUES ('1', 'User');
 INSERT INTO `fsad`.`roles` (`id`, `name`) VALUES ('2', 'admin');
+
+#######################
+
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('1', 'Hindi');
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('2', 'Spanish');
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('3', 'English');
+
 
