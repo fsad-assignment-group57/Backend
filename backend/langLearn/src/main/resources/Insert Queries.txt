@@ -1,4 +1,4 @@
-Level 1:
+###Level 1:
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values(1,'Hello','Hindi','नमस्ते',1,'namaste');
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (2,'Good Night','Hindi','शुभ रात्रि',1,'shubh raatri');
 insert into fsad.tbl_language_structure (id,English_word,language,Language_word,level,word_spell_in_english) values (3,'Good Morning','Hindi','शुभ प्रभात',1,'shubh prabhaat');
@@ -295,8 +295,8 @@ INSERT INTO `fsad`.`roles` (`id`, `name`) VALUES ('2', 'admin');
 
 #######################
 
-INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('1', 'Hindi');
-INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('2', 'Spanish');
-INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`) VALUES ('3', 'English');
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`,`native_language`) VALUES ('1', 'Hindi','हिंदी');
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`,`native_language`) VALUES ('2', 'Spanish','Española');
+INSERT INTO `fsad`.`userlanguages` (`language_id`, `languages`,`native_language`) VALUES ('3', 'French','Français');
 
 
